@@ -80,4 +80,17 @@ body {
     background: rgba(129, 116, 116, 0.5); 
     
   }
+  #text {
+    width: 100%; 
+    max-width: 70%;
+    position: absolute;
+    font-size: 13px; 
+    border: 2px; 
+    top: 5%;
+    border-radius: 20px; 
+    transition: 0.3s ease-in-out; 
+    text-align: center; 
+    z-index: 2
+
+}
   
