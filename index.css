@@ -1,0 +1,41 @@
+body {
+  background-color: #f8f9fa;
+}
+
+h1 {
+  text-align: center;
+
+  font-weight: bold;
+  
+}
+
+
+.nav .nav-link {
+  font-weight: bold;
+}
+
+.nav .nav-link {
+  color: #001f3f ;
+  font-weight: bold;
+}
+
+.nav .nav-link.active {
+  background-color: white;
+  color:lightgreen solid ; 
+}
+
+.nav .nav-link:hover {
+  color: rgba(0, 55, 255, 0.505) ;
+}
+
+#text {
+  width: 100%; 
+  max-width: 1000px;
+  padding: 10px; 
+  font-size: 16px; 
+  border: 2px solid lightgreen; 
+  border-radius: 10px; 
+  transition: 0.3s ease-in-out;
+  text-align: center; 
+}
+
