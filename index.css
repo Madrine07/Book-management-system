@@ -93,4 +93,32 @@ body {
     z-index: 2
 
 }
+.nav .nav-link {
+  font-weight: bold;
+}
+
+.nav .nav-link {
+  color: #001f3f ;
+  font-weight: bold;
+  top: 10%;
+}
+
+.nav .nav-link.active {
+  background-color: white;
+  color:lightgreen solid ; 
+}
+
+.nav .nav-link:hover {
+  color: rgba(0, 55, 255, 0.505) ;
+}
+.nav{
+  display: flex;
+  justify-content: first baseline;
+  padding: 10px , 20pxs;
+  position: fixed;
+  top: 0;
+  width: 50%;
+  margin-top: 50 px;
+  border-radius: 10pxs;
   
+}
