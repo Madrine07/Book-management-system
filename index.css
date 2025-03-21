@@ -93,32 +93,46 @@ body {
     z-index: 2
 
 }
-.nav .nav-link {
-  font-weight: bold;
+
+.nav {
+  text-align: center;
+
 }
 
 .nav .nav-link {
-  color: #001f3f ;
-  font-weight: bold;
-  top: 10%;
+font-weight: bold;
+}
+
+.nav .nav-link {
+color: #ebeff3 ;
+font-weight: bold;
+font-size: larger;
 }
 
 .nav .nav-link.active {
-  background-color: white;
-  color:lightgreen solid ; 
-}
+background-color:black;
 
-.nav .nav-link:hover {
-  color: rgba(0, 55, 255, 0.505) ;
 }
-.nav{
+#booktabs{
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  z-index: 2;  /* Ensure it's above the image */
   display: flex;
-  justify-content: first baseline;
-  padding: 10px , 20pxs;
-  position: fixed;
-  top: 0;
-  width: 50%;
-  margin-top: 50 px;
-  border-radius: 10pxs;
-  
+  justify-content: center;
+}
+#bookTabsContent{
+  position: absolute;
+  top: 20%;
+  left: 05%;
+  z-index: 2;
+}
+p{
+  color: white;
+}
+#button{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  z-index: 2;
 }
