@@ -1,124 +1,154 @@
+
 body {
-    background-color: #f8f9fa;
-  }
-  h1, h4{
-    text-align: center;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .container {
-    display: flex;
-    height: 100vh;
-  }
-  .introduction{
-    position: relative;
-    text-align: center;
-    
-  }
-  .mytext{
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    
-  }
-  .slogan{
-    position: absolute;
-    top:70%;
-    font-size:medium;
-    left:18%;
-    font-style: italic;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-  }
-  
-  .left-side .white {
-    position: absolute;
-    top: 20%; 
-    left: 40%;
-    transform: translateX(-50%); /* Center the image horizontally */
-    width: 70%; 
-    opacity: 1; 
-  }
-  
-  .left-side .color-box {
-    height: 99%;
-    background-color: #9600ff; 
-  }
-  .left-side, .right-side {
-    flex: 1;
-    height: 100%;
-    position: relative;
-  }
-  .right-side {
-    position: relative;
-  }
-  
-  .image-overlay {
-    position: relative;
-    width: 100%;
-    height: 99%;
-  }
-
-  .image-overlay img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
- 
-  .image-overlay::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(129, 116, 116, 0.5); 
-    
-  }
-  #text {
-    width: 100%; 
-    max-width: 70%;
-    position: absolute;
-    font-size: 13px; 
-    border: 2px; 
-    top: 5%;
-    border-radius: 20px; 
-    transition: 0.3s ease-in-out; 
-    text-align: center; 
-    z-index: 2
-
-}
-.nav .nav-link {
-  font-weight: bold;
+  background-color: #f8f9fa;
 }
 
+h1, h4 {
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Left Side */
+.left-side {
+  flex: 1;
+  position: relative;
+}
+
+.left-side .color-box {
+  height: 99%;
+  background-color: #9600ff;
+}
+
+.left-side .white {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  transform: translateX(-50%);
+  width: 70%;
+  opacity: 1;
+}
+
+.mytext {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.slogan {
+  position: absolute;
+  top: 70%;
+  left: 18%;
+  font-size: medium;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Right Side */
+.right-side {
+  flex: 1;
+  position: relative;
+}
+
+.image-overlay {
+  position: relative;
+  width: 100%;
+  height: 99%;
+}
+
+.image-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Search Bar */
+#searchInput {
+  width: 70%;
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Navigation Tabs */
+#booktabs {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
 .nav .nav-link {
-  color: #001f3f ;
   font-weight: bold;
-  top: 10%;
+  color: white;
 }
 
 .nav .nav-link.active {
-  background-color: white;
-  color:lightgreen solid ; 
+  background-color: black;
 }
 
-.nav .nav-link:hover {
-  color: rgba(0, 55, 255, 0.505) ;
-}
-.nav{
+/* Book List */
+#bookList {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  z-index: 3;
   display: flex;
-  justify-content: first baseline;
-  padding: 10px , 20pxs;
-  position: fixed;
-  top: 0;
-  width: 50%;
-  margin-top: 50 px;
-  border-radius: 10pxs;
-  
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Book Cards */
+.book-card {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 180px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.book-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.book-card button {
+  width: 100%;
+  margin-top: 5px;
+}
+
+#addBookButton{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  z-index: 2;
 }

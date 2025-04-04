@@ -8,73 +8,88 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
     <div class="container">
+        <!-- Left Side -->
         <div class="left-side">
-          <div class="color-box"></div>
-          <div class="introductionn">
-            <img src="images/white-square.png" alt="word" class="white">
-                <h1 class="mytext">📚Book Management System</h1>
+            <div class="color-box"></div>
+            <div class="introduction">
+                <img src="images/white-square.png" alt="word" class="white">
+                <h1 class="mytext">📚 Book Management System</h1>
                 <h4 class="slogan">Quench Your Thirst for Knowledge</h4>
             </div>
         </div>
+
+        <!-- Right Side -->
         <div class="right-side">
             <div class="image-overlay">
-                <img src="images/library.jpg" alt="Image" class="image">
-                
-                
+                <img src="images/library.jpg" alt="Library Image" class="image">
+
+                <!-- Search Bar -->
                 <div class="d-flex justify-content-center align-items-center">
-                    <input type="text" class="form-control" id="text" placeholder="Search All books by Title or Author.....">
-                </div>
-                <ul  class=" nav" id="booktabs">
-                    <li class=" nav-item-1"> <a class="nav-link active" data-bs-toggle="tab" href="#allBooks">All books</a></li>
-                <li class="nav-item-2"> <a class="nav-link " data-bs-toggle="tab" href="#favourite">favourite</a></li>
-                <li class="nav-item-3"> <a class="nav-link " data-bs-toggle="tab" href="#read">Read</a></li> 
-                <li class="nav-item-4"> <a class="nav-link " data-bs-toggle="tab" href="#unread">Unread</a></li></ul>
-                <button class="btn btn-info mt-5" data-bs-toggle="modal" data-bs-target="#bookModal">+ Add Book</button>
-    <div class="modal fade" id="bookModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Add/Edit Book</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="bookForm">
-                        <input type="hidden" id="bookId">
-                        <input type="text" id="title" class="form-control mb-2" placeholder="Title" required>
-                        <input type="text" id="author" class="form-control mb-2" placeholder="Author" required>
-                        <input type="text" id="genre" class="form-control mb-2" placeholder="Genre" required>
-                        <select id="status" class="form-control mb-2">
-                            <option value="unread">Unread</option>
-                            <option value="read">Read</option>
-                        </select>
-                        <input type="file" id="coverImage" class="form-control mb-2" accept="image/*">
-                        <button type="submit" class="btn btn-success w-100">Save Book</button>
-                    </form>
 
-                </div>
+                
 
-                <div class="container mt-5">
-                    <div class="card book-modal" style="width: 18rem;">
-                      <img src="./images/download (1).jpg" class="card-img-top" alt="Book Image">
-                      <div class="card-body">
-                        <h5 class="card-title">javascript</h5>
-                        <p class="card-text">This is a brief description of the book. It gives an overview of the content or highlights of the book.</p>
-                        <a href="#" class="btn btn-primary">delete</a>
-                        <a href="#" class="btn btn-primary">favorite</a>
-                        <a href="#" class="btn btn-primary">edit</a>
-                      </div>
+                    
+                   
+                    
+              
+
+                <!-- Book Display Sections -->
+                <div class="tab-content mt-4" id="bookTabsContent">
+                    <div class="tab-pane fade show active" id="allBooks">
+                        
                     </div>
-                  </div>
-                 <div></div>
+                    <div class="tab-pane fade" id="favourite">
+                       
+                    </div>
+                    <div class="tab-pane fade" id="read">
+                       
+                    </div>
+                    <div class="tab-pane fade" id="unread">
+                        
+                    </div>
+                </div>
+
+                <!-- Add Book Button -->
+                <button class="btn btn-info mt-5" data-bs-toggle="modal" data-bs-target="#bookModal" id="addBookButton">+ Add Book</button>
+
+                <!-- Book Modal -->
+                <div class="modal fade" id="bookModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Add/Edit Book</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="bookForm">
+                                    <input type="hidden" id="bookId">
+                                    <input type="text" id="title" class="form-control mb-2" placeholder="Title" required>
+                                    <input type="text" id="author" class="form-control mb-2" placeholder="Author" required>
+                                    <select id="status" class="form-control mb-2">
+                                        <option value="unread">Unread</option>
+                                        <option value="read">Read</option>
+                                    </select>
+                                    <input type="file" id="coverImage" class="form-control mb-2" accept="image/*" required>
+                                    <button type="submit" class="btn btn-success w-100">Save Book</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
+                
 
+               
 
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-                <script src="./index.js"></script>
+            </div>
+        </div>
+    </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
 
 </body>
 </html>
