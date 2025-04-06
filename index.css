@@ -13,7 +13,7 @@ h1, h4 {
   box-sizing: border-box;
 }
 
-/* Layout */
+
 .container {
   display: flex;
   height: 100vh;
@@ -45,6 +45,19 @@ h1, h4 {
   left: 40%;
   transform: translate(-50%, -50%);
 }
+
+#text {
+  width: 100%; 
+  max-width: 70%;
+  position: absolute;
+  font-size: 13px; 
+  border: 2px; 
+  top: 5%;
+  border-radius: 20px; 
+  transition: 0.3s ease-in-out; 
+  text-align: center; 
+  z-index: 2}
+
 
 .slogan {
   position: absolute;
@@ -148,7 +161,7 @@ h1, h4 {
 
 #addBookButton{
   position: absolute;
-  top: 50%;
+  top: 85%;
   left: 10%;
   z-index: 2;
 }
