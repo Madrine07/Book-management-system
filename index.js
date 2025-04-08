@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    let books = JSON.parse(localStorage.getItem("newBooksModel")) || [];
+    let books = JSON.parse(localStorage.getItem("book")) || [];
     const bookList = document.getElementById("bookList");})
 
 document.addEventListener("DOMContentLoaded", function () {
