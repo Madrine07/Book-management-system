@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         favBtn.onclick = () => {
             book.favourite = !book.favourite;
             saveBooks();
-            renderBooks(); // Re-render after favourite change
+            renderBooks(); 
         };
 
         // Edit button
@@ -106,15 +106,15 @@ document.addEventListener("DOMContentLoaded", function () {
         booksToRender.forEach(book => {
             const card = createBookCard(book);
 
-           
+            
             allBooks.appendChild(card);
 
-           
+            
             if (book.favourite) {
                 favouriteTab.appendChild(createBookCard(book));
             }
 
-           
+        
             if (book.status === "read") {
                 readTab.appendChild(createBookCard(book));
             } else {
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-   
+    
     searchInput.addEventListener("input", function () {
         const query = searchInput.value.toLowerCase(); 
 
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let imageURL = "";
         if (imageInput.files.length > 0) {
             const file = imageInput.files[0];
-            imageURL = await convertToBase64(file);  // Convert image to base64
+            imageURL = await convertToBase64(file); 
         }
 
         if (id) {
@@ -176,13 +176,13 @@ document.addEventListener("DOMContentLoaded", function () {
         saveBooks();
         renderBooks();
 
-        
+       
         bookForm.reset();
         document.getElementById("bookId").value = "";
         const modal = bootstrap.Modal.getInstance(document.getElementById("bookModal"));
         modal.hide();
     });
 
-   
+
     renderBooks();
 });
