@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         readTab.innerHTML = "";
         unreadTab.innerHTML = "";
 
-        s
+        
         const booksToRender = filteredBooks || books;
 
         booksToRender.forEach(book => {
