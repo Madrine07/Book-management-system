@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const favouriteTab = document.getElementById("favourite");
     const readTab = document.getElementById("read");
     const unreadTab = document.getElementById("unread");
+    const searchInput = document.getElementById("searchInput"); // Search input field
 
     let books = JSON.parse(localStorage.getItem("books")) || [];
 
@@ -53,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         favBtn.onclick = () => {
             book.favourite = !book.favourite;
             saveBooks();
-            renderBooks();
+            renderBooks(); // Re-render after favourite change
         };
 
         // Edit button
@@ -79,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (confirmDelete) {
                 books = books.filter(b => b.id !== book.id);
                 saveBooks();
-                renderBooks();
+                renderBooks(); // Re-render after delete
             }
         };
 
@@ -92,25 +93,28 @@ document.addEventListener("DOMContentLoaded", function () {
         return card;
     }
 
-    function renderBooks() {
+    function renderBooks(filteredBooks) {
         // Clear all tabs
         allBooks.innerHTML = "";
         favouriteTab.innerHTML = "";
         readTab.innerHTML = "";
         unreadTab.innerHTML = "";
 
-        books.forEach(book => {
+        s
+        const booksToRender = filteredBooks || books;
+
+        booksToRender.forEach(book => {
             const card = createBookCard(book);
 
-            // All Books
+           
             allBooks.appendChild(card);
 
-            // Favourites
+           
             if (book.favourite) {
                 favouriteTab.appendChild(createBookCard(book));
             }
 
-            // Read / Unread
+           
             if (book.status === "read") {
                 readTab.appendChild(createBookCard(book));
             } else {
@@ -118,6 +122,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+   
+    searchInput.addEventListener("input", function () {
+        const query = searchInput.value.toLowerCase(); 
+
+        
+        const filteredBooks = books.filter(book => 
+            book.title.toLowerCase().includes(query) || 
+            book.author.toLowerCase().includes(query)
+        );
+
+        
+        renderBooks(filteredBooks);
+    });
 
     bookForm.addEventListener("submit", async function (e) {
         e.preventDefault();
@@ -150,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 title,
                 author,
                 status,
-                image: imageURL,  // Store base64 image here
+                image: imageURL,  
                 favourite: false
             });
         }
@@ -158,12 +176,13 @@ document.addEventListener("DOMContentLoaded", function () {
         saveBooks();
         renderBooks();
 
-        // Reset form and close modal
+        
         bookForm.reset();
         document.getElementById("bookId").value = "";
         const modal = bootstrap.Modal.getInstance(document.getElementById("bookModal"));
         modal.hide();
     });
 
+   
     renderBooks();
 });
