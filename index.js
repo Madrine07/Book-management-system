@@ -183,5 +183,18 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.hide();
     });
 
+    // Scroll content into view when tab is shown
+    const tabTriggers = document.querySelectorAll('[data-bs-toggle="tab"]');
+
+    tabTriggers.forEach(trigger => {
+        trigger.addEventListener("shown.bs.tab", (event) => {
+            const targetId = event.target.getAttribute("href"); // e.g. #favourite
+            const targetContent = document.querySelector(targetId);
+            if (targetContent) {
+                targetContent.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
+    });
+
     renderBooks();
 });
