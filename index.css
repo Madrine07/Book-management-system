@@ -343,6 +343,19 @@ h1, h4 {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff; /* White track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0; /* Light gray handle */
+  border-radius: 5px;
+  border: 2px solid #ffffff; /* White border around handle */
+}
 
 
 
